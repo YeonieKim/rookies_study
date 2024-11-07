@@ -1,0 +1,13 @@
+# Python 기본 설정
+*.pyc
+__pycache__/
+
+# Django 기본 설정
+*.sqlite3
+*.log
+
+# 가상 환경
+venv/
+
+# 환경 변수 파일
+.env

@@ -1,0 +1,138 @@
+<!--templetes/accounts/login.html-->
+<html>
+  <head><link rel="shortcut icon" href="#"></head><body>
+  <div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+      <svg class="formbold-img" width="490" height="202" viewBox="0 0 490 202" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M382.76 2.47283H262.606C262.606 1.10712 261.499 0 260.133 0H210.597C209.231 0 208.124 1.10712 208.124 2.47283H87.4749C85.3191 2.47283 83.2517 3.32799 81.7274 4.85017C80.203 6.37235 79.3467 8.43686 79.3467 10.5896V174.884C79.3467 177.037 80.203 179.101 81.7274 180.623C83.2517 182.146 85.3191 183.001 87.4749 183.001H382.76C384.916 183.001 386.983 182.146 388.508 180.623C390.032 179.101 390.888 177.037 390.888 174.884V10.5886C390.888 8.43611 390.032 6.37183 388.507 4.84985C386.983 3.32787 384.916 2.47283 382.76 2.47283Z" fill="#3F3D56"></path>
+        <path d="M379.991 16.8164H90.2441V180.033H379.991V16.8164Z" fill="#E6E6E6"></path>
+        <path d="M368.27 25.3164H103V166.396H368.27V25.3164Z" fill="white"></path>
+        <!-- Additional SVG content omitted for brevity -->
+      </svg>
+  
+      <form method="POST" action="{% url 'accounts:login_method1' %}">
+        {% csrf_token %}
+        <div class="formbold-form-title">
+          <h2>Login</h2>
+          <p>Please enter your id and password to log in.</p>
+        </div>
+        <div class="formbold-mb-3">
+            <label for="id" class="formbold-form-label"> ID </label>
+            <input
+              type="id"
+              name="id"
+              id="id"
+              class="formbold-form-input"
+            />
+        </div>
+  
+        <div class="formbold-mb-3">
+            <label for="password" class="formbold-form-label"> Password </label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="formbold-form-input"
+            />
+        </div>
+
+        <!-- 메시지를 표시하는 부분 추가 -->
+        {% if messages %}
+            <div>
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        <button class="formbold-btn">Login</button>
+      </form>
+    </div>
+  </div>
+  
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .formbold-mb-3 {
+        margin-bottom: 15px;
+      }
+      .formbold-main-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px;
+      }
+      .formbold-form-wrapper {
+        margin: 0 auto;
+        max-width: 570px;
+        width: 100%;
+        background: white;
+        padding: 40px;
+      }
+      .formbold-img {
+        margin-bottom: 45px;
+      }
+      .formbold-form-title {
+        margin-bottom: 30px;
+      }
+      .formbold-form-title h2 {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 34px;
+        color: #07074d;
+      }
+      .formbold-form-title p {
+        font-size: 16px;
+        line-height: 24px;
+        color: #536387;
+        margin-top: 12px;
+      }
+      .formbold-form-input {
+        text-align: left;
+        width: 100%;
+        padding: 13px 22px;
+        border-radius: 5px;
+        border: 1px solid #dde3ec;
+        background: #ffffff;
+        font-weight: 500;
+        font-size: 16px;
+        color: #536387;
+        outline: none;
+      }
+      .formbold-form-input:focus {
+        border-color: #6a64f1;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      }
+      .formbold-form-label {
+        color: #536387;
+        font-size: 14px;
+        line-height: 24px;
+        display: block;
+        margin-bottom: 10px;
+      }
+      .formbold-btn {
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 14px 25px;
+        border: none;
+        font-weight: 500;
+        background-color: #6a64f1;
+        color: white;
+        cursor: pointer;
+        margin-top: 25px;
+      }
+      .formbold-btn:hover {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      }
+  </style>
+  </body></html>
+  

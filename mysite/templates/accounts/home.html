@@ -1,0 +1,18 @@
+<!--DOCTYPE html-->
+<head>
+    <title>회원 목록</title>
+</head>
+<body>
+    <h1>회원 목록</h1>
+    {% if user %}
+        {% for user in users %}
+            <li>{{ user.name }} {{ user.id }} {{ user.password }}</li>
+        {% endfor %}
+    {% else %}
+        <p>회원 없음</p>
+    {% endif %}
+</body>
+</html>
+<!-- 등록된 회원 정보 목록을 출력하는 테스트 페이지
+
+View에서 DB에 저장된 회원 정보 데이터를 받아서 전부 출력하도록 함-->
